@@ -61,21 +61,28 @@
 // ] as const
 
 
-// // Pick
+// // Pick только какие параметры внести
 // type Vector3 = { x: number, y: number, z: number }
 // type Vector2 = Pick<Vector3, 'x' | "y">
 // type MyPick<T, K extends keyof T> = {[P in K]: T[P]}
 // type Vector1 = MyPick<Vector3, 'z'>
 
 
-// Extract
-type A = string | number | boolean
-type B = string | number
-type C = Extract<A,B>
-type MyExtract<T1,T2> = T1 extends T2 ? T1 : never
-type D = MyExtract<A,B>
+// // Extract то что общее
+// type A = string | number | boolean
+// type B = string | number
+// type C = Extract<A,B>
+// type MyExtract<T1,T2> = T1 extends T2 ? T1 : never
+// type D = MyExtract<A,B>
 
-//Exclude
-type E = Exclude<A,B>
-type MyExclude<T1,T2> = T1 extends T2 ? never : T1
-type F = MyExclude<A,B>
+// //Exclude то что необщее
+// type E = Exclude<A,B>
+// type MyExclude<T1,T2> = T1 extends T2 ? never : T1
+// type F = MyExclude<A,B>
+
+
+// // Omit только какие параметры не вносить
+// type Person1 = { name: string, age: number, weight: number, height: number }
+// type Person2 = Omit<Person1, 'weight' | 'height'>
+// type MyOmit<T, K extends keyof any> = Pick<T, Exclude<keyof T, K>>
+// type Person3 = MyOmit<Person1, 'age' | 'name'>
