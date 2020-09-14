@@ -1,7 +1,7 @@
 
 // //Partial
 // type Person1 = { name: string, age: number }
-// type Person2 = Partial<Person1> // makes everything fields required
+// type Person2 = Partial<Person1> // makes everything fields not required
 // // keyof - get the keys
 // // next
 // // we create a new keys "P"
@@ -13,7 +13,7 @@
 // type Animal2 = Required<Animal1>
 // // keyof -get the keys
 // // next
-// // makes everythins fields not required
+// // makes everythins fields required
 // // -?
 // type MyRequired<T> = {[P in keyof T]-?: T[P]}
 // type Animal3 = MyRequired<Animal1> 
@@ -59,3 +59,9 @@
 // const arr3 = [
 //     { title: "Look", page: 117 }
 // ] as const
+
+// // Pick
+// type Vector3 = { x: number, y: number, z: number }
+// type Vector2 = Pick<Vector3, 'x' | "y">
+// type MyPick<T, K extends keyof T> = {[P in K]: T[P]}
+// type Vector1 = MyPick<Vector3, 'z'>
