@@ -60,8 +60,17 @@
 //     { title: "Look", page: 117 }
 // ] as const
 
+
 // // Pick
 // type Vector3 = { x: number, y: number, z: number }
 // type Vector2 = Pick<Vector3, 'x' | "y">
 // type MyPick<T, K extends keyof T> = {[P in K]: T[P]}
 // type Vector1 = MyPick<Vector3, 'z'>
+
+
+// // Extract
+// type A = string | number | boolean
+// type B = string | number
+// type C = Extract<A,B>
+// type MyExtract<T1,T2> = T1 extends T2 ? T1 : never
+// type D = MyExtract<A,B>
