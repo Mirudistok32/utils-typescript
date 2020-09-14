@@ -111,7 +111,14 @@ type MyParameters<T extends (...args: any) => any> =
     T extends (...args: infer P) => any ? P : never
 type D = MyParameters<A>
 
+// ConstructorParameters
 type E = ConstructorParameters<B>
 type MyConstructorParameters<T extends new (...args: any) => any> =
     T extends new (...args: infer P) => any ? P : never
 type F = MyConstructorParameters<B>
+
+// ReturnType
+type G = ReturnType<A>
+type MyReturnType<T extends (...args: any) => any> =
+    T extends (...args: any) => infer P ? P : never
+type H = MyReturnType<A>
