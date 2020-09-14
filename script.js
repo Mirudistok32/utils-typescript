@@ -7,24 +7,7 @@
 // // we create a new keys "P"
 // type MyPartial<T> = { [P in keyof T]?: T[P] } // keyof Person1 // Person[P]
 // type Person3 = MyPartial<Person1>
-// // Required
-// type Animal1 = {name?:string, weight?: number}
-// type Animal2 = Required<Animal1>
-// // keyof -get the keys
-// // next
-// // makes everythins fields not required
-// // -?
-// type MyRequired<T> = {[P in keyof T]-?: T[P]}
-// type Animal3 = MyRequired<Animal1> 
-// // NonNullable
-// // clear in type all "undefined" and "null"
-// type Color1 = string | undefined | null
-// type Color2 = NonNullable<Color1>
-// type MyNonNullable<T> = T extends null | undefined ? never : T
-// type Color3 = MyNonNullable<Color1>
-// // Record
-// type Dimensions1 = {width: number, height: number, length: number}
-// type Dimensions2 = Record<'width' | 'height' | 'length', number>
-// type MyRecord<K extends keyof any,T> = {[P in K]: T}
-// type Dimensions3 = MyRecord<'width' | 'height' | 'length', string>
+var article1 = { title: "Статья 1", page: 12 };
+var article2 = { title: "Статья 1", page: 12 };
+var article3 = { title: "Статья 1", page: 12 };
 //# sourceMappingURL=script.js.map
