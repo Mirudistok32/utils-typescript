@@ -42,16 +42,20 @@
 // const article3: Article3 = { title: "Статья 1", page: 12 }
 
 
-// ReadonlyArray
-type Article1 = { title: string, page: number }
-type Articles1 = Array<Article1>
-type Articles2 = ReadonlyArray<Article1>
+// // ReadonlyArray
+// type Article1 = { title: string, page: number }
+// type Articles1 = Array<Article1>
+// type Articles2 = ReadonlyArray<Article1>
 
-const arr1: Articles1 = [
-    { title: "Look", page: 117 }
-]
-arr1.push({ title: "See", page: 32 })
+// const arr1: Articles1 = [
+//     { title: "Look", page: 117 }
+// ]
+// arr1.push({ title: "See", page: 32 })
 
-const arr2: Articles2 = [
-    { title: "Look", page: 117 }
-]
+// const arr2: Articles2 = [
+//     { title: "Look", page: 117 }
+// ]
+
+// const arr3 = [
+//     { title: "Look", page: 117 }
+// ] as const
