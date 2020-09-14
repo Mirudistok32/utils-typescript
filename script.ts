@@ -68,9 +68,14 @@
 // type Vector1 = MyPick<Vector3, 'z'>
 
 
-// // Extract
-// type A = string | number | boolean
-// type B = string | number
-// type C = Extract<A,B>
-// type MyExtract<T1,T2> = T1 extends T2 ? T1 : never
-// type D = MyExtract<A,B>
+// Extract
+type A = string | number | boolean
+type B = string | number
+type C = Extract<A,B>
+type MyExtract<T1,T2> = T1 extends T2 ? T1 : never
+type D = MyExtract<A,B>
+
+//Exclude
+type E = Exclude<A,B>
+type MyExclude<T1,T2> = T1 extends T2 ? never : T1
+type F = MyExclude<A,B>
