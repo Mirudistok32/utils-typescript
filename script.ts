@@ -120,5 +120,10 @@ type F = MyConstructorParameters<B>
 // ReturnType
 type G = ReturnType<A>
 type MyReturnType<T extends (...args: any) => any> =
-    T extends (...args: any) => infer P ? P : never
+    T extends (...args: any) => infer P ? P : any
 type H = MyReturnType<A>
+
+type L = InstanceType<B>
+type MyInstanceType<T extends new (...args: any) => any> =
+    T extends new (...args: any) => infer P ? P : any
+type O = MyInstanceType<B>
