@@ -69,4 +69,15 @@
 // type Person2 = Omit<Person1, 'weight' | 'height'>
 // type MyOmit<T, K extends keyof any> = Pick<T, Exclude<keyof T, K>>
 // type Person3 = MyOmit<Person1, 'age' | 'name'>
+//
+function foo1(a, b) {
+    return a.length > b.toString().length;
+}
+var Class1 = /** @class */ (function () {
+    function Class1(a, b) {
+        this.a = a;
+        this.b = b;
+    }
+    return Class1;
+}());
 //# sourceMappingURL=script.js.map
