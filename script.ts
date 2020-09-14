@@ -17,3 +17,10 @@
 // // -?
 // type MyRequired<T> = {[P in keyof T]-?: T[P]}
 // type Animal3 = MyRequired<Animal1> 
+
+// // NonNullable
+// // clear in type all "undefined" and "null"
+// type Color1 = string | undefined | null
+// type Color2 = NonNullable<Color1>
+// type MyNonNullable<T> = T extends null | undefined ? never : T
+// type Color3 = MyNonNullable<Color1>
