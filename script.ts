@@ -110,3 +110,8 @@ type C = Parameters<A>
 type MyParameters<T extends (...args: any) => any> =
     T extends (...args: infer P) => any ? P : never
 type D = MyParameters<A>
+
+type E = ConstructorParameters<B>
+type MyConstructorParameters<T extends new (...args: any) => any> =
+    T extends new (...args: infer P) => any ? P : never
+type F = MyConstructorParameters<B>
