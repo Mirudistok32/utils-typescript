@@ -88,42 +88,42 @@
 // type Person3 = MyOmit<Person1, 'age' | 'name'>
 
 
-//
-function foo1(a: string, b: number): boolean {
-    return a.length > b.toString().length
-}
-class Class1 {
-    a: boolean
-    b: string
+// //
+// function foo1(a: string, b: number): boolean {
+//     return a.length > b.toString().length
+// }
+// class Class1 {
+//     a: boolean
+//     b: string
 
-    constructor(a: boolean, b: string) {
-        this.a = a
-        this.b = b
-    }
-}
+//     constructor(a: boolean, b: string) {
+//         this.a = a
+//         this.b = b
+//     }
+// }
 
-type A = typeof foo1
-type B = typeof Class1
+// type A = typeof foo1
+// type B = typeof Class1
 
-// Parameters возв. кортеж типов входных параметров
-type C = Parameters<A>
-type MyParameters<T extends (...args: any) => any> =
-    T extends (...args: infer P) => any ? P : never
-type D = MyParameters<A>
+// // Parameters возв. кортеж типов входных параметров
+// type C = Parameters<A>
+// type MyParameters<T extends (...args: any) => any> =
+//     T extends (...args: infer P) => any ? P : never
+// type D = MyParameters<A>
 
-// ConstructorParameters
-type E = ConstructorParameters<B>
-type MyConstructorParameters<T extends new (...args: any) => any> =
-    T extends new (...args: infer P) => any ? P : never
-type F = MyConstructorParameters<B>
+// // ConstructorParameters
+// type E = ConstructorParameters<B>
+// type MyConstructorParameters<T extends new (...args: any) => any> =
+//     T extends new (...args: infer P) => any ? P : never
+// type F = MyConstructorParameters<B>
 
-// ReturnType
-type G = ReturnType<A>
-type MyReturnType<T extends (...args: any) => any> =
-    T extends (...args: any) => infer P ? P : any
-type H = MyReturnType<A>
+// // ReturnType
+// type G = ReturnType<A>
+// type MyReturnType<T extends (...args: any) => any> =
+//     T extends (...args: any) => infer P ? P : any
+// type H = MyReturnType<A>
 
-type L = InstanceType<B>
-type MyInstanceType<T extends new (...args: any) => any> =
-    T extends new (...args: any) => infer P ? P : any
-type O = MyInstanceType<B>
+// type L = InstanceType<B>
+// type MyInstanceType<T extends new (...args: any) => any> =
+//     T extends new (...args: any) => infer P ? P : any
+// type O = MyInstanceType<B>
