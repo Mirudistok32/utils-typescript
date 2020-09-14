@@ -7,7 +7,11 @@
 // // we create a new keys "P"
 // type MyPartial<T> = { [P in keyof T]?: T[P] } // keyof Person1 // Person[P]
 // type Person3 = MyPartial<Person1>
-var article1 = { title: "Статья 1", page: 12 };
-var article2 = { title: "Статья 1", page: 12 };
-var article3 = { title: "Статья 1", page: 12 };
+var arr1 = [
+    { title: "Look", page: 117 }
+];
+arr1.push({ title: "See", page: 32 });
+var arr2 = [
+    { title: "Look", page: 117 }
+];
 //# sourceMappingURL=script.js.map

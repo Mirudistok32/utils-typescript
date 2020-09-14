@@ -31,12 +31,27 @@
 // type MyRecord<K extends keyof any,T> = {[P in K]: T}
 // type Dimensions3 = MyRecord<'width' | 'height' | 'length', string>
 
-// Readonly
-type Articlel = { title: string, page: number }
-type Article2 = Readonly<Articlel>
-type MyReadonly<T> = {readonly [P in keyof T]: T[P]}
-type Article3 = MyReadonly<Articlel> 
+// // Readonly
+// type Articlel = { title: string, page: number }
+// type Article2 = Readonly<Articlel>
+// type MyReadonly<T> = {readonly [P in keyof T]: T[P]}
+// type Article3 = MyReadonly<Articlel> 
 
-const article1: Articlel = { title: "Статья 1", page: 12 }
-const article2: Article2 = { title: "Статья 1", page: 12 }
-const article3: Article3 = { title: "Статья 1", page: 12 }
+// const article1: Articlel = { title: "Статья 1", page: 12 }
+// const article2: Article2 = { title: "Статья 1", page: 12 }
+// const article3: Article3 = { title: "Статья 1", page: 12 }
+
+
+// ReadonlyArray
+type Article1 = { title: string, page: number }
+type Articles1 = Array<Article1>
+type Articles2 = ReadonlyArray<Article1>
+
+const arr1: Articles1 = [
+    { title: "Look", page: 117 }
+]
+arr1.push({ title: "See", page: 32 })
+
+const arr2: Articles2 = [
+    { title: "Look", page: 117 }
+]
