@@ -24,3 +24,9 @@
 // type Color2 = NonNullable<Color1>
 // type MyNonNullable<T> = T extends null | undefined ? never : T
 // type Color3 = MyNonNullable<Color1>
+
+// // Record
+// type Dimensions1 = {width: number, height: number, length: number}
+// type Dimensions2 = Record<'width' | 'height' | 'length', number>
+// type MyRecord<K extends keyof any,T> = {[P in K]: T}
+// type Dimensions3 = MyRecord<'width' | 'height' | 'length', string>
